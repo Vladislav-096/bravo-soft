@@ -1,0 +1,49 @@
+@use "./_variables.scss" as *;
+
+@mixin button($width) {
+  display: block;
+  padding: 7px;
+  width: $width;
+  border: 1px solid $borderColor;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: $shh;
+  background-color: transparent;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $tertaryBackground;
+  }
+}
+
+@mixin form() {
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .input {
+    padding: 7px 10px;
+    color: $primaryColor;
+    width: inherit;
+    border: none;
+    outline: 1px solid $borderColor;
+    background-color: $secondaryBackground;
+    border-radius: 5px;
+  }
+
+  .error {
+    text-align: center;
+    margin-bottom: 5px;
+    color: rgb(255, 0, 0);
+  }
+
+  .submit {
+    margin: auto;
+    @include button(150px);
+  }
+}

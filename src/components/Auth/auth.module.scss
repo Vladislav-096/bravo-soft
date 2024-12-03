@@ -1,0 +1,6 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixin.scss" as *;
+
+.form {
+  @include form();
+}

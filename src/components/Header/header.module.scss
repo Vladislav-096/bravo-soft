@@ -1,0 +1,54 @@
+@use "../../styles//variables.scss" as *;
+@use "../../styles/mixin.scss" as *;
+
+.header {
+  margin-bottom: 15px;
+  border-bottom: 1px solid $borderColor;
+
+  .wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0 15px 0;
+
+    @media(max-width: 577px) {
+      justify-content: flex-start;
+    }
+
+    .nav {
+      max-width: 300px;
+      overflow-x: auto;
+
+      .link {
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 1px;
+          background-color: $primaryColor;
+        }
+
+        &:hover {
+          &::before {
+            width: 100%;
+          }
+        }
+
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+      }
+    }
+
+    .button {
+      position: absolute;
+      right: 0;
+      @include button(100px);
+    }
+  }
+}

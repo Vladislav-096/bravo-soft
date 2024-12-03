@@ -1,0 +1,18 @@
+@use "../../styles//variables.scss" as *;
+@use "../../styles/mixin.scss" as *;
+
+.notification {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .error {
+    margin-bottom: 15px;
+  }
+
+  .retry {
+    margin: 0 auto;
+    @include button(100px);
+  }
+}

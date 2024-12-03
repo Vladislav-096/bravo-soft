@@ -1,0 +1,76 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixin.scss" as *;
+
+.form {
+  position: relative;
+  @include form();
+
+  .input-dropdown {
+    pointer-events: none;
+    position: absolute;
+    opacity: 0;
+  }
+
+  .fake-input {
+    position: relative;
+    padding: 7px 10px;
+    width: inherit;
+    height: 38px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    outline: 1px solid $borderColor;
+    background-color: $secondaryBackground;
+    color: $primaryColor;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 6px;
+      right: 6px;
+      background-image: url("../../assets/arrow-down.svg");
+      background-repeat: no-repeat;
+    }
+
+    .fake-placeholder {
+      position: absolute;
+      top: 8px;
+      left: 12px;
+      color: $secondaryColor;
+      pointer-events: none;
+    }
+  }
+
+  .dropdown {
+    position: absolute;
+    padding: 5px;
+    width: 100%;
+    max-height: 170px;
+    overflow-y: auto;
+    top: 71px;
+    left: 0;
+    background-color: $tertaryBackground;
+    border-radius: 5px;
+    z-index: 1111;
+
+    .option {
+      padding: 0 5px 0 5px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: $buttonBackgroundColorHover;
+      }
+    }
+  }
+
+  .success {
+    text-align: center;
+    margin-bottom: 5px;
+    color: $buttonGreenHover;
+  }
+}

@@ -1,0 +1,31 @@
+@use "../../styles//variables.scss" as *;
+@use "../../styles/mixin.scss" as *;
+
+.button {
+  @include button(300px);
+}
+
+.notification {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .link {
+    position: relative;
+    color: $linkColor;
+
+    &:hover {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $linkColor;
+      }
+    }
+  }
+}
